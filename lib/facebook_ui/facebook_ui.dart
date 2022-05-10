@@ -1,8 +1,11 @@
-import 'package:fb/facebook_ui/widgets/circle_button.dart';
 import 'package:fb/icons/custom_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'widgets/circle_button.dart';
+import 'widgets/quick_actions.dart';
+import 'widgets/what_is_on_your_mind.dart';
 
 class FacebookUi extends StatelessWidget {
   @override
@@ -18,7 +21,6 @@ class FacebookUi extends StatelessWidget {
         leading: SvgPicture.asset(
           'assets/images/facebook.svg',
           color: Colors.blueAccent,
-          width: 150,
         ),
         actions: const [
           CircleButton(
@@ -38,6 +40,7 @@ class FacebookUi extends StatelessWidget {
           CircleButton(
             color: Colors.lightBlue,
             iconData: CustomIcons.user_friends,
+            showBadge: true,
           ),
           SizedBox(
             width: 5,
@@ -49,6 +52,18 @@ class FacebookUi extends StatelessWidget {
           SizedBox(
             width: 15,
           ),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ).copyWith(top: 20),
+        children: const [
+          WhatIsOnYourMind(),
+          SizedBox(
+            height: 30,
+          ),
+          QuickActions(),
         ],
       ),
     );
