@@ -7,30 +7,42 @@ class QuickActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: const [
-        QuickButton(
-          iconData: CustomIcons.photos,
-          color: Color(0xffAEE2A4),
-          text: 'Gallery',
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Row(
+          children: const [
+            _QuickButton(
+              iconData: CustomIcons.photos,
+              color: Color(0xffAEE2A4),
+              text: 'Gallery',
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            _QuickButton(
+              iconData: CustomIcons.user_friends,
+              color: Color(0xff2880D4),
+              text: 'Tag Friends',
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            _QuickButton(
+              iconData: CustomIcons.video_camera,
+              color: Color(0xffFB7171),
+              text: 'Live',
+            ),
+          ],
         ),
-        QuickButton(
-          iconData: CustomIcons.user_friends,
-          color: Color(0xff2880D4),
-          text: 'Tag Friends',
-        ),
-        QuickButton(
-          iconData: CustomIcons.video_camera,
-          color: Color(0xffFB7171),
-          text: 'Live',
-        ),
-      ],
+      ),
     );
   }
 }
 
-class QuickButton extends StatelessWidget {
-  const QuickButton({
+class _QuickButton extends StatelessWidget {
+  const _QuickButton({
     Key? key,
     required this.iconData,
     required this.color,
@@ -50,6 +62,7 @@ class QuickButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           CircleButton(
             color: color.withOpacity(0.6),

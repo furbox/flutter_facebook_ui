@@ -32,6 +32,8 @@ dependencies:
   flutter_svg: ^1.0.3
   cached_network_image: ^3.2.0
   device_preview: ^1.0.0
+  faker: ^2.0.0
+  timeago: ^3.2.2
 
 
   # The following adds the Cupertino Icons font to your application.
